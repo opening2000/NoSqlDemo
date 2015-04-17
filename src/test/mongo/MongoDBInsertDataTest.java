@@ -123,21 +123,21 @@ public class MongoDBInsertDataTest {
 	 */
 	public static void main(String[] args) {
 		// 插入数据前若有记录才先删除所有记录
-//		if (myCollection.find().count() > 0) {
-//			myCollection.remove(new BasicDBObject());
-//		}
+		if (myCollection.find().count() > 0) {
+			myCollection.remove(new BasicDBObject());
+		}
 		printData("插入数据前的所有结果记录为：", getResult(myCollection));
-//		// 再插入数据
-//		saveData(myCollection);
-//		insertData(myCollection);
-//		// 再查询数据
-//		printData("插入数据后的所有结果记录为：", getResult(myCollection));
+		// 再插入数据
+		saveData(myCollection);
+		insertData(myCollection);
+		// 再查询数据
+		printData("插入数据后的所有结果记录为：", getResult(myCollection));
 		
-//		// 再删除指定的数据
-//		DBObject deletePig = new BasicDBObject();
-//		deletePig.put("name", "pig");
-//		myCollection.remove(deletePig);
-//		printData("删除pig后的所有结果记录为：", getResult(myCollection));
+		// 再删除指定的数据
+		DBObject deletePig = new BasicDBObject();
+		deletePig.put("name", "pig");
+		myCollection.remove(deletePig);
+		printData("删除pig后的所有结果记录为：", getResult(myCollection));
 
 	}
 }
